@@ -4,5 +4,6 @@
 
 <% @bands.each do |band|%>
     <h2><%= band.name %></h2>
+    <a href="<%= band_url(band) %>">Details</a>
     <br>
 <% end%>

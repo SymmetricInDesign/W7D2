@@ -11,7 +11,7 @@
 
   <body>
     <% if current_user %>
-    
+
       <h2>Welcome, <%= current_user.email %></h2>
 
       <form action="<%= session_url %>" method="post">
@@ -36,5 +36,9 @@
     
     
     <%= yield %>
+    <br>
+    <br>
+    <a href="<%= albums_url %>">Show All Albums</a>
+    <a href="<%= bands_url %>">Show All Bands</a>
   </body>
 </html>

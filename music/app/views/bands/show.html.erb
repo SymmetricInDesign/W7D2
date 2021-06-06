@@ -5,3 +5,18 @@
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Delete <%= @band.name %>">
 </form>
+
+<h2> <%= @band.name %>'s Albums</h2>
+
+<% @band.albums.each do |album| %>
+    <h2><a href="<%= album_url(album) %>"><%= album.title %></a></h2>
+    <h3><%= album.year %></h3>
+    <h3><%= album.studio ? "Studio Album" : "Live Album" %></h3>
+    <br>
+<% end %>
+
+<form action="<%= new_band_album_url(@band) %>" method="get">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <%# <input type="hidden" name="_method" value="delete"> %>
+    <input type="submit" value="Add an album to <%= @band.name %>'s discography">
+</form>

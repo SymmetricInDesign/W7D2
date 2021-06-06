@@ -1,0 +1,10 @@
+<% flash.each do |type, msg|%>
+    <%= msg %>
+<% end%>
+
+<% @albums.each do |album|%>
+    <h2><%= album.title %></h2>
+    <h2><%= album.year %></h2>
+    <h2><%= album.studio ? "Studio Album" : "Live Album" %></h2>
+    <br>
+<% end%>

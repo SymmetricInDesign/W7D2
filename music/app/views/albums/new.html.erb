@@ -1,0 +1,21 @@
+<h1>Add an album to <%= @band.name %>'s discography</h1>
+
+<% flash.each do |type, msg|%>
+    <%= msg %>
+<% end%>
+
+<form action="<%= albums_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="band_id" value="<%= @band.id %>">
+    <label for="title">Title: </label>
+    <input type="text" id="title" name="album[title]" value="<%= @album.title %>">
+    <label for="year">Year: </label>
+    <input type="text" id="year" name="album[year]" value="<%= @album.year %>">
+    <label>Live Album</label>
+    <input type="radio" name="studio" value="false">
+    <label>Studio Album</label>
+    <input type="radio" name="studio" value="true" checked>
+    
+
+    <input type="submit" value="Add Album">
+</form>
