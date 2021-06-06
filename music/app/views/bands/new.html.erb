@@ -1,0 +1,14 @@
+<h1>Add a Band</h1>
+
+<% flash.each do |type, msg|%>
+    <%= msg %>
+<% end%>
+
+<form action="<%= bands_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <label for="name">Band Name: </label>
+    <input type="text" id="name" name="band[name]" value="<%= @band.name %>">
+    
+
+    <input type="submit" value="Add Band">
+</form>

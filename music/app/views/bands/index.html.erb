@@ -1,0 +1,8 @@
+<% flash.each do |type, msg|%>
+    <%= msg %>
+<% end%>
+
+<% @bands.each do |band|%>
+    <h2><%= band.name %></h2>
+    <br>
+<% end%>
